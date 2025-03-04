@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Adopt a Pet</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <nav>
+        <a href="/">Home</a> | <a href="/pet-listing">View Pets</a> | <a href="/adoption">Adopt a Pet</a> | <a href="/dashboard">Dashboard</a>
+    </nav>
+
+    <h1>Adopt a Pet</h1>
+    
+    <form action="/adopt" method="POST">
+        <label for="name">Your Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="pet">Choose a Pet:</label>
+        <select id="pet" name="pet">
+            <% pets.forEach(pet => { %>
+                <option value="<%= pet.name %>"><%= pet.name %> - <%= pet.type %></option>
+            <% }) %>
+        </select>
+
+        <button type="submit">Adopt</button>
+    </form>
+</body>
+</html>
+
