@@ -1,0 +1,23 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "John Doe",
+      "email": "john@example.com",
+      "pets": [
+        {
+          "pet_id": 101,
+          "pet_name": "Buddy",
+          "pet_type": "Dog",
+          "age": 3
+        },
+        {
+          "pet_id": 102,
+          "pet_name": "Whiskers",
+          "pet_type": "Cat",
+          "age": 2
+        }
+      ]
+    }
+  ]
+}
