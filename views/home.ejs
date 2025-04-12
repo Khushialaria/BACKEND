@@ -1,14 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Home - Pet Adoption</title>
-    <link rel="stylesheet" href="/styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome to Pet Adoption</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-    <nav>
-        <a href="/">Home</a> | <a href="/pet-listing">View Pets</a> | <a href="/adoption">Adopt a Pet</a> | <a href="/dashboard">Dashboard</a>
-    </nav>
-    <h1>Welcome to Pet Adoption</h1>
-    <p>Find a loving pet and give them a home! 🐶🐱</p>
+  <!-- Navbar -->
+  <nav>
+    <a href="/">Home</a>
+    <a href="/pet-listing">View Pets</a>
+    <a href="/adoption">Adopt a Pet</a>
+    <a href="/dashboard">Dashboard</a>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Give a Forever Home to a Furry Friend 🐾</h1>
+    <p>Find a loving pet and make them part of your family.</p>
+    <a href="/pet-listing" class="cta-btn">View Available Pets</a>
+  </section>
+
+  <!-- Featured Pets -->
+  <section class="featured">
+    <h2>Featured Pets</h2>
+    <div class="pet-container">
+      <div class="pet-card">
+        <img src="/images/dog1.jpg" alt="Doggo">
+        <h3>Buddy</h3>
+        <p>Friendly & Energetic</p>
+        <button onclick="location.href='/adoption'">Adopt Me</button>
+      </div>
+      <div class="pet-card">
+        <img src="/images/cat1.jpg" alt="Kitty">
+        <h3>Mittens</h3>
+        <p>Calm & Loving</p>
+        <button onclick="location.href='/adoption'">Adopt Me</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="testimonials">
+    <h2>Happy Tails 🐕</h2>
+    <div class="testimonial">
+      <p>"Adopting Bella was the best decision we ever made. She's brought so much joy into our lives!"</p>
+      <span>- Ria, Delhi</span>
+    </div>
+    <div class="testimonial">
+      <p>"The adoption process was so smooth. Thank you for helping us find our fur baby!"</p>
+      <span>- Arjun, Mumbai</span>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 PetAdopt. All rights reserved.</p>
+    <p>Contact: support@petadopt.com | Follow us on 
+      <a href="#">Instagram</a> | <a href="#">Facebook</a>
+    </p>
+  </footer>
 </body>
 </html>
+
+

@@ -1,15 +1,35 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
 /* Global Styling */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    font-family: 'Poppins', sans-serif;
+    color: white;
     margin: 0;
     padding: 0;
     text-align: center;
+    min-height: 100vh;
+    position: relative;
+}
+
+/* Background Image */
+body::before {
+    content: "";
+    background-image: url('/images/background.jpg');
+    background-size: cover;
+    background-position: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    opacity: 0.7;
 }
 
 /* Navigation Bar */
 nav {
-    background-color: #001eff;
+    background-color:  #264653;
     padding: 15px;
 }
 
@@ -26,27 +46,74 @@ nav a:hover {
 }
 
 /* Headings */
-h1 {
-    color: #333;
+h1, h2, h3 {
+    color: black;
     margin-top: 20px;
 }
 
-/* Pet Cards */
+/* Hero Section */
+.hero {
+    background: rgba(255, 255, 255, 0.85);
+    padding: 60px 20px;
+    text-align: center;
+    border-radius: 10px;
+    margin: 20px auto;
+    width: 80%;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.hero h1 {
+    font-size: 36px;
+    color: #2c3e50;
+}
+
+.hero p {
+    font-size: 20px;
+    color: #555;
+}
+
+.cta-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 25px;
+    background-color: #ff6f61;
+    color: white;
+    border-radius: 8px;
+    font-size: 16px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.cta-btn:hover {
+    background-color: #ff3d2e;
+}
+
+/* Pet Cards Container */
 .pet-container {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     margin-top: 20px;
+    background-size: cover;
+    background-position: center;
+    padding: 20px;
 }
 
+/* Individual Pet Card */
 .pet-card {
-    background: white;
+    background: seashell;
+    color: black;
     border-radius: 10px;
     padding: 15px;
     width: 250px;
     margin: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.pet-card:hover {
+    transform: scale(1.05);
 }
 
 .pet-card img {
@@ -57,7 +124,7 @@ h1 {
 
 .pet-card button {
     background-color: #7b00ff;
-    color: white;
+    color: black;
     border: none;
     padding: 8px 15px;
     cursor: pointer;
@@ -73,9 +140,10 @@ h1 {
 /* Adoption Form */
 form {
     background: white;
+    color: black;
     padding: 20px;
     width: 50%;
-    margin: auto;
+    margin: 30px auto;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
 }
@@ -83,6 +151,9 @@ form {
 form label {
     font-size: 18px;
     font-weight: bold;
+    display: block;
+    margin-top: 10px;
+    text-align: left;
 }
 
 form input, form select {
@@ -91,6 +162,7 @@ form input, form select {
     margin: 10px 0;
     border: 1px solid #ddd;
     border-radius: 5px;
+    font-family: 'Poppins', sans-serif;
 }
 
 form button {
@@ -101,17 +173,19 @@ form button {
     cursor: pointer;
     font-size: 16px;
     border-radius: 5px;
+    margin-top: 15px;
 }
 
 form button:hover {
     background-color: #218838;
 }
 
-/* Dashboard */
+/* Dashboard Styling */
 .dashboard-container {
     width: 60%;
-    margin: auto;
+    margin: 30px auto;
     background: white;
+    color: black;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -127,9 +201,53 @@ form button:hover {
     border: 1px solid #ddd;
     padding: 10px;
     text-align: center;
+    font-size: 16px;
 }
 
 .dashboard-table th {
     background-color: blueviolet;
     color: white;
+}
+
+/* Testimonials Section */
+.testimonials h2 {
+    color: #222;
+    margin: 40px 0 20px;
+}
+
+.testimonial {
+    background-color: #fff;
+    padding: 20px;
+    margin: 10px auto;
+    width: 60%;
+    border-radius: 10px;
+    color: #444;
+    font-style: italic;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.testimonial span {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+    color: #555;
+}
+
+/* Footer */
+footer {
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 10px;
+    text-align: center;
+    margin-top: 30px;
+    font-size: 14px;
+}
+
+footer a {
+    color: lightblue;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
 }
