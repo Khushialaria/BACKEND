@@ -66,6 +66,11 @@ app.get('/dashboard', (req, res) => {
     res.render('dashboard', { users });
 });
 
+app.get('/chatbox', (req, res) => {
+    res.render('chatbox');
+});
+
+
 // 404 Error Handler
 app.use((req, res) => {
     res.status(404).render('error', { message: 'Page not found!' });
