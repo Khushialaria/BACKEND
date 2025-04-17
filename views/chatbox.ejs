@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Snoutify Chat</title>
+  <link rel="stylesheet" href="/styles.css">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 0;
+    }
+    .chat-container {
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .chat-header {
+      font-size: 24px;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .chat-box {
+      height: 300px;
+      overflow-y: scroll;
+      border: 1px solid #ddd;
+      padding: 10px;
+      border-radius: 8px;
+      background: #f0f0f0;
+    }
+    .chat-message {
+      margin: 10px 0;
+    }
+    .user-msg {
+      text-align: right;
+      color: #4CAF50;
+    }
+    .bot-msg {
+      text-align: left;
+      color: #333;
+    }
+    .chat-input {
+      margin-top: 15px;
+      display: flex;
+    }
+    .chat-input input {
+      flex: 1;
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+    .chat-input button {
+      padding: 10px 20px;
+      margin-left: 10px;
+      background-color: #4CAF50;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <a href="/">Home</a>
+    <a href="/pet-listing">View Pets</a>
+    <a href="/adoption">Adopt a Pet</a>
+    <a href="/dashboard">Dashboard</a>
+    <a href="/chatbox">Chat</a>
+  </nav>
+
+  <!-- Chat Content -->
+  <div class="chat-container">
+    <div class="chat-header">Snoutify Chat Assistant</div>
+    <div class="chat-box" id="chat-box">
+      <div class="chat-message bot-msg">Hi! 🐶 How can I help you today?</div>
+    </div>
+    <div class="chat-input">
+      <input type="text" id="user-input" placeholder="Type your message..." />
+      <button onclick="sendMessage()">Send</button>
+    </div>
+  </div>
+
+  <script>
+    function sendMessage() {
+      const userInput = document.getElementById('user-input');
+      const chatBox = document.getElementById('chat-box');
+      const userMessage = userInput.value.trim();
+
+      if (userMessage === '') return;
+
+      // Show user's message
+      const userDiv = document.createElement('div');
+      userDiv.classList.add('chat-message', 'user-msg');
+      userDiv.textContent = userMessage;
+      chatBox.appendChild(userDiv);
+
+      // Show bot reply
+      const botDiv = document.createElement('div');
+      botDiv.classList.add('chat-message', 'bot-msg');
+      botDiv.textContent = generateReply(userMessage);
+      chatBox.appendChild(botDiv);
+
+      // Clear input and scroll
+      userInput.value = '';
+      chatBox.scrollTop = chatBox.scrollHeight;
+    }
+
+    function generateReply(message) {
+      message = message.toLowerCase();
+      if (message.includes('adopt')) return 'You can visit the "Adopt a Pet" page for details!';
+      if (message.includes('hello') || message.includes('hi')) return 'Hello there! 🐾';
+      if (message.includes('dog') || message.includes('cat')) return 'We have many cute pets listed. Check out our View Pets page!';
+      return 'Sorry, I didn’t quite get that. Try asking about pets or adoption.';
+    }
+  </script>
+
+</body>
+</html>
